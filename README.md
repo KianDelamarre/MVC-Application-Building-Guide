@@ -4,6 +4,41 @@ In a traditional Java MVC architecture, data models define the contract for the 
 
 The general build sequence follows a bottom-up flow: Data & Contracts $\rightarrow$ Persistence $\rightarrow$ Business Logic $\rightarrow$ Presentation.
 
+```plaintext
+
+
+src/
+└── main/
+    └── java/
+        └── com/
+            └── example/
+                └── app/
+                    ├── Main.java                         # Entry point
+                    ├── controller/                       # Presentation / API controllers
+                    │   └── Controller.java
+                    ├── dao/                              # Data Access Layer
+                    │   ├── Dao.java                      # Interface
+                    │   └── DaoImpl.java                  # Implementation of Dao
+                    │   └── util/                         # File/DB helpers, marshallers
+                    │       └── DataStorage.java          # Interface
+                    │       └── DataStorageImpl.java      # Implementation (File with delimiter, JSON, SQL, noSQL etc)
+                    │       └── DataMarshaller.java       # Interface
+                    │       └── DataMarshallerImpl.java   # Implementation (Adding delimiter, normalising etc)
+                    ├── dto/                              # Pure data models / domain objects
+                    │   ├── Dto.java
+                    ├── exception/                        # Application-specific exceptions
+                    │   ├── DataAccessException.java
+                    │   └── ValidationException.java
+                    ├── service/                          # Core Business Logic Layer
+                    │   ├── UserService.java              # Interface
+                    │   └── UserServiceImpl.java
+                    └── ui/                               # View components (CLI views, FX controllers, etc.)
+                        └── ProjectView.java              # Overall view
+                        └── UserIO.java                   # Interface
+                        └── UserIOImpl.java               # Specific implementation (Console, Web interface, Desktop app etc)
+
+```
+
 ## Build sequence
 
 ![Java Extended MVC Diagram](https://github.com/KianDelamarre/MVC-Application-Building-Guide/blob/b771472f1f070e30d865d0cb24ced41b8b89ea41/mvc%20builder%20order%20flowchart.jpeg)
