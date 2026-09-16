@@ -17,17 +17,17 @@ src/
                 └── app/
                     ├── Main.java                         # Entry point
                     ├── controller/                       # Presentation / API controllers
-                    │   └── Controller.java
+                    │   └── UserController.java
 (Package)           ├── dao/                              # Data Access Layer 
-                    │   ├── Dao.java                      # Interface
-                    │   └── DaoImpl.java                  # Implementation of Dao
+                    │   ├── UserDao.java                  # Interface
+                    │   └── UserDaoImpl.java              # Implementation of Dao
 (Package)           │   └── util/                         # File/DB helpers, marshallers
                     │       └── DataStorage.java          # Interface
                     │       └── DataStorageImpl.java      # Implementation (File with delimiter, JSON, SQL, noSQL etc)
                     │       └── DataMarshaller.java       # Interface
                     │       └── DataMarshallerImpl.java   # Implementation (Adding delimiter, normalising etc)
 (Package)           ├── dto/                              # Pure data models / domain objects 
-                    │   ├── Dto.java
+                    │   ├── UserDto.java
 (Package)           ├── exception/                        # Application-specific exceptions  
                     │   ├── DataAccessException.java
                     │   └── ValidationException.java
@@ -35,7 +35,7 @@ src/
                     │   ├── UserService.java              # Interface
                     │   └── UserServiceImpl.java
 (Package)           └── ui/                               # View components (CLI views, FX controllers, etc.)
-                        └── ProjectView.java              # Overall view
+                        └── UserView.java                 # Overall view
                         └── UserIO.java                   # Interface
                         └── UserIOImpl.java               # Specific implementation (Console, Web interface, Desktop app etc)
 
