@@ -6,7 +6,7 @@ The general build sequence follows a bottom-up flow: Data & Contracts $\rightarr
 
 ## Table of Contents
 - [MVC Application Building Framework](#mvc-application-building-framework)
-- [Recommended Directory Structure](##recommended-directory-structure)
+- [Recommended Directory Structure](#recommended-directory-structure)
 - [Build Sequence](#build-sequence)
   - [Step 1: Data Transfer Objects (DTOs)](#step-1-data-transfer-objects-dtos)
   - [Step 2: Data Access Layer (DAO & DAO Utils)](#step-2-data-access-layer-dao--dao-utils)
@@ -19,7 +19,7 @@ The general build sequence follows a bottom-up flow: Data & Contracts $\rightarr
   - [Identifier Conventions](#identifier-conventions)
   - [Key Naming Best Practices](#key-naming-best-practices)
 
-## Recommended Director structure
+## Recommended directory structure
 
 All classes should be in a relevant package (usually named using its parent directory)
 
