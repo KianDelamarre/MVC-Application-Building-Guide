@@ -37,9 +37,9 @@ src/
                     │   ├── UserDao.java                  # Interface
                     │   └── UserDaoImpl.java              # Implementation of Dao
 (Package)           │   └── util/                         # File/DB helpers, marshallers
-                    │       └── DataStorage.java          # Interface
-                    │       └── DataStorageImpl.java      # Implementation (File with delimiter, JSON, SQL, noSQL etc)
-                    │       └── DataMarshaller.java       # Interface
+                    │       |── DataStorage.java          # Interface
+                    │       |── DataStorageImpl.java      # Implementation (File with delimiter, JSON, SQL, noSQL etc)
+                    │       |── DataMarshaller.java       # Interface
                     │       └── DataMarshallerImpl.java   # Implementation (Adding delimiter, normalising etc)
 (Package)           ├── dto/                              # Pure data models / domain objects 
                     │   ├── UserDto.java
@@ -147,7 +147,7 @@ Java follows well-established casing standards to keep code readable, consistent
 
 ### Key Naming Best Practices
 
- - Acroronyms: Treat acronyms as standard words rather than keeping all letters uppercase to preserve readability. Use XmlParser instead of XMLParser, or fetchHttpUrl() instead of fetchHTTPURL().
+ - Acronyms: Treat acronyms as standard words rather than keeping all letters uppercase to preserve readability. Use XmlParser instead of XMLParser, or fetchHttpUrl() instead of fetchHTTPURL().
   
  - Boolean Methods: Prefix methods returning boolean values with is, has, can, or should (e.g., isEmpty(), hasPermission()).
    
