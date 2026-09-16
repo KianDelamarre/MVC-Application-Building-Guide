@@ -4,9 +4,9 @@ In a traditional Java MVC architecture, data models define the contract for the 
 
 The general build sequence follows a bottom-up flow: Data & Contracts $\rightarrow$ Persistence $\rightarrow$ Business Logic $\rightarrow$ Presentation.
 
+## Recommended Director structure. All classes should be in a relevant package (usually named using its parent directory)
+
 ```plaintext
-
-
 src/
 └── main/
     └── java/
@@ -16,23 +16,23 @@ src/
                     ├── Main.java                         # Entry point
                     ├── controller/                       # Presentation / API controllers
                     │   └── Controller.java
-                    ├── dao/                              # Data Access Layer
+(Package)           ├── dao/                              # Data Access Layer 
                     │   ├── Dao.java                      # Interface
                     │   └── DaoImpl.java                  # Implementation of Dao
-                    │   └── util/                         # File/DB helpers, marshallers
+(Package)           │   └── util/                         # File/DB helpers, marshallers
                     │       └── DataStorage.java          # Interface
                     │       └── DataStorageImpl.java      # Implementation (File with delimiter, JSON, SQL, noSQL etc)
                     │       └── DataMarshaller.java       # Interface
                     │       └── DataMarshallerImpl.java   # Implementation (Adding delimiter, normalising etc)
-                    ├── dto/                              # Pure data models / domain objects
+(Package)           ├── dto/                              # Pure data models / domain objects 
                     │   ├── Dto.java
-                    ├── exception/                        # Application-specific exceptions
+(Package)           ├── exception/                        # Application-specific exceptions  
                     │   ├── DataAccessException.java
                     │   └── ValidationException.java
-                    ├── service/                          # Core Business Logic Layer
+(Package)           ├── service/                          # Core Business Logic Layer  
                     │   ├── UserService.java              # Interface
                     │   └── UserServiceImpl.java
-                    └── ui/                               # View components (CLI views, FX controllers, etc.)
+(Package)           └── ui/                               # View components (CLI views, FX controllers, etc.)
                         └── ProjectView.java              # Overall view
                         └── UserIO.java                   # Interface
                         └── UserIOImpl.java               # Specific implementation (Console, Web interface, Desktop app etc)
@@ -110,3 +110,30 @@ Handle user interactions and visual rendering (e.g., CLI, JavaFX, or HTML/JSP).
 
 ## Overall Architecture
 ![Java Extended MVC Diagram](https://raw.githubusercontent.com/KianDelamarre/MVC-Application-Building-Guide/d6681fe4a25b28d5fd7c8e7f6968f91c0d2a7777/Java%20extended%20mvc%20diagram.jpeg)
+
+<br>
+
+## Java best practice naming convention
+
+Java follows well-established casing standards to keep code readable, consistent, and intuitive across the ecosystem.
+
+### Identifier Conventions
+
+| Category | Casing Style | Rules & Examples |
+|---|---|---|
+| Classes & Interfaces | `PascalCase` | Nouns or noun phrases. Capitalize the first letter of every word.<br>• `UserController`, `DataStorageImpl`<br>• Interfaces often use adjectives: `Runnable`, `Serializable` |
+| Methods | `camelCase` | Verbs or verb phrases. Lowercase first word, capitalize subsequent words.<br>• `getUserById()`, `calculateTotal()`, `isValid()` |
+| Variables & Parameters | `camelCase` | Short, meaningful nouns. Avoid cryptic abbreviations.<br>• `firstName`, `itemCount`, `payload` |
+| Constants | `UPPER_SNAKE_CASE` | Applied strictly to static final fields whose values are immutable.<br>• `MAX_RETRY_ATTEMPTS`, `DEFAULT_TIMEOUT_MS` |
+| Packages | `lowercase` | Reverse domain name in all lowercase. Avoid underscores or hyphenated names.<br>• `com.example.app.service`<br>• `org.apache.commons.lang3` |
+| Type Parameters (Generics) | `SINGLE_UPPERCASE` | Single capital letters representing generic types.<br>• `T` (Type), `E` (Element), `K` (Key), `V` (Value) |
+
+### Key Naming Best Practices
+
+ - Acroronyms: Treat acronyms as standard words rather than keeping all letters uppercase to preserve readability. Use XmlParser instead of XMLParser, or fetchHttpUrl() instead of fetchHTTPURL().
+  
+ - Boolean Methods: Prefix methods returning boolean values with is, has, can, or should (e.g., isEmpty(), hasPermission()).
+   
+ - Implementation Classes: Append Impl when naming a concrete class implementing a single interface (e.g., UserService interface $\rightarrow$ UserServiceImpl class).
+   
+ - Test Classes: Name tests after the class being tested with a Test suffix (e.g., UserServiceTest).
