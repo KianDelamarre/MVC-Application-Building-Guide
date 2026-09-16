@@ -3,9 +3,11 @@
 In a traditional Java MVC architecture, data models define the contract for the entire application. Building from the ground up ensures you aren't trying to map data or build business logic for objects that don't exist yet.
 The general build sequence follows a bottom-up flow: Data & Contracts $\rightarrow$ Persistence $\rightarrow$ Business Logic $\rightarrow$ Presentation.
 
-##Build sequence
+## Build sequence
 
-![Java Extended MVC Diagram](https://raw.githubusercontent.com/KianDelamarre/MVC-Application-Building-Guide/d6681fe4a25b28d5fd7c8e7f6968f91c0d2a7777/Java%20extended%20mvc%20diagram.jpeg)
+![Java Extended MVC Diagram](https://github.com/KianDelamarre/MVC-Application-Building-Guide/blob/b771472f1f070e30d865d0cb24ced41b8b89ea41/mvc%20builder%20order%20flowchart.jpeg)
+
+
 
 ## Step 1: Data Transfer Objects (DTOs)
 
@@ -55,6 +57,8 @@ Handle user interactions and visual rendering (e.g., CLI, JavaFX, or HTML/JSP).
 
 - Action: Build views to collect inputs and display outputs. The UI calls Controller methods to execute user intent.
 
+---
+
 ## Layer Dependency Map
 
 | Package Layer | Responsibilities                                     | Depends On      |
@@ -64,6 +68,8 @@ Handle user interactions and visual rendering (e.g., CLI, JavaFX, or HTML/JSP).
 | service       | Business rules, validation, transaction flow         | dao, dto        |
 | controller    | Input handling, routing, service execution control   | service, dto    |
 | ui            | User display, view formatting, input gathering       | controller, dto |
+
+---
 
 ## Overall Architecture
 ![Java Extended MVC Diagram](https://raw.githubusercontent.com/KianDelamarre/MVC-Application-Building-Guide/d6681fe4a25b28d5fd7c8e7f6968f91c0d2a7777/Java%20extended%20mvc%20diagram.jpeg)
