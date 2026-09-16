@@ -4,7 +4,22 @@ In a traditional Java MVC architecture, data models define the contract for the 
 
 The general build sequence follows a bottom-up flow: Data & Contracts $\rightarrow$ Persistence $\rightarrow$ Business Logic $\rightarrow$ Presentation.
 
-## Recommended Director structure.
+## Table of Contents
+- [MVC Application Building Framework](#mvc-application-building-framework)
+- [Recommended Directory Structure](##recommended-directory-structure)
+- [Build Sequence](#build-sequence)
+  - [Step 1: Data Transfer Objects (DTOs)](#step-1-data-transfer-objects-dtos)
+  - [Step 2: Data Access Layer (DAO & DAO Utils)](#step-2-data-access-layer-dao--dao-utils)
+  - [Step 3: Service Layer](#step-3-service-layer)
+  - [Step 4: Controller Layer](#step-4-controller-layer)
+  - [Step 5: UI (View) Layer](#step-5-ui-view-layer)
+- [Layer Dependency Map](#layer-dependency-map)
+- [Overall Architecture](#overall-architecture)
+- [Java Best Practice Naming Convention](#java-best-practice-naming-convention)
+  - [Identifier Conventions](#identifier-conventions)
+  - [Key Naming Best Practices](#key-naming-best-practices)
+
+## Recommended Director structure
 
 All classes should be in a relevant package (usually named using its parent directory)
 
