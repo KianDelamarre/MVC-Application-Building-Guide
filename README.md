@@ -4,7 +4,9 @@ In a traditional Java MVC architecture, data models define the contract for the 
 
 The general build sequence follows a bottom-up flow: Data & Contracts $\rightarrow$ Persistence $\rightarrow$ Business Logic $\rightarrow$ Presentation.
 
-## Recommended Director structure. All classes should be in a relevant package (usually named using its parent directory)
+## Recommended Director structure.
+
+All classes should be in a relevant package (usually named using its parent directory)
 
 ```plaintext
 src/
